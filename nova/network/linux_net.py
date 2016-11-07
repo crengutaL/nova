@@ -1136,8 +1136,8 @@ def restart_dhcp(context, dev, network_ref, fixedips):
            '--dhcp-lease-max=%s' % len(netaddr.IPNetwork(network_ref['cidr'])),
            '--dhcp-hostsfile=%s' % _dhcp_file(dev, 'conf'),
            '--dhcp-script=%s' % CONF.dhcpbridge,
-           '--no-hosts',
-           '--leasefile-ro']
+           '--no-hosts']
+           
 
     # dnsmasq currently gives an error for an empty domain,
     # rather than ignoring.  So only specify it if defined.
